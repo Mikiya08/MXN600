@@ -1,0 +1,51 @@
+---
+title: "MXN600 Major Data Analysis Project (Group 001)"
+author: "Mikiya Yamazaki"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Introduction
+```{r packages, include=FALSE}
+library(tidyverse)
+library(MASS)
+library(ggpubr)
+#install.packages("DHARMa")
+library(DHARMa)
+#install.packages("AER")
+library(AER)
+library(nnet)
+library(dplyr)
+library(GGally)
+library(knitr)
+#install.packages("rcompanion")
+library(rcompanion)
+library(pROC)
+#install.packages("MLmetrics")
+library(MLmetrics)
+```
+
+
+
+```{r data, include=TRUE}
+#Load the raw data:
+validation_data <- read.csv(file = "data/benchmark_validation_loan_data.csv")
+training_data <- read.csv(file = "data/benchmark_training_loan_data.csv")
+extended_data <- read.csv(file = "data/extendend_version_loan_data.csv")
+
+#Show search if there is any missing data
+print(paste("Any missing values in training data-set:",any(is.na(training_data))))
+print(paste("Any missing values in training data-set:",any(is.na(validation_data))))
+print(paste("Any missing values in training data-set:",any(is.na(extended_data))))
+```
+
+
+
+```{r data_clean, include=TRUE}
+
+```
